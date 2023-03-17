@@ -40,9 +40,9 @@ COMMON_PATH = ../../common
 SOURCES = $(wildcard *.cpp) $(wildcard $(COMMON_PATH)/*.cpp)
 OBJECTS = $(patsubst %.cpp, %.o, $(SOURCES)) 
 
-CXX=g++
+#/CXX=g++
 # uncomment to use hip compiler
-#CXX=$(HIPCXX)
+CXX=$(HIPCXX)
 OPT = -g -Ofast -march=native -Wall
 INC = -I$(COMMON_PATH) -isystem$(ROCBLAS_PATH)/include -isystem$(ROCM_PATH)/include 
 CXXFLAGS = -std=c++14 $(INC) $(OPT) 
